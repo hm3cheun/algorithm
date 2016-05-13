@@ -1,9 +1,29 @@
 import java.util.*;
 
 public class LCM {
+  private static int gcd(int a, int b) {
+    int gcd;
+        if (  b == 0 )
+            return a;
+        else if ( a == 0 )
+            return b;
+        else
+        {
+          if ( a < b)
+            { 
+            gcd= gcd (a, b%a );
+            }
+          else
+          {
+            gcd=gcd (b, a%b );
+          }
+        }
+        return gcd ;
+  }
   private static long lcm(int a, int b) {
     //write your code here
-    return a * b;
+    long GCD =gcd(a,b);
+    return ( a/GCD ) * b;
   }
 
   public static void main(String args[]) {

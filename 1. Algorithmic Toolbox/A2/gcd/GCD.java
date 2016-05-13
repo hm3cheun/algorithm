@@ -2,16 +2,23 @@ import java.util.*;
 
 public class GCD {
   private static int gcd(int a, int b) {
-    int current_gcd = 1;
-    for(int d = 2; d <= a && d <= b; ++d) {
-      if (a % d == 0 && b % d == 0) {
-        if (d > current_gcd) {
-          current_gcd = d;
+    int gcd;
+        if (  b == 0 )
+            return a;
+        else if ( a == 0 )
+            return b;
+        else
+        {
+          if ( a < b)
+            { 
+            gcd= gcd (a, b%a );
+            }
+          else
+          {
+            gcd=gcd (b, a%b );
+          }
         }
-      }
-    }
-
-    return current_gcd;
+        return gcd ;
   }
 
   public static void main(String args[]) {
